@@ -1,3 +1,4 @@
+import Button from "./Button";
 import Card from "./Card";
 
 const ProductCard = () => {
@@ -15,9 +16,9 @@ const ProductCard = () => {
         </section>
 
         <section>
-          <button className="w-full md:w-none md:h-full bg-green-500 md:hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+          <Button className="w-full md:w-none md:h-full" color="green">
             Add
-          </button>
+          </Button>
         </section>
       </div>
     </Card>
