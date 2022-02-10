@@ -1,5 +1,5 @@
 import Badge from './Badge'
-const Button = ({ children, color='green', className, badgeValue }) => {
+const Button = ({ children, color='green', className, badgeValue, ...opts}) => {
 
   const badgeStyle = {
     position: 'absolute',
@@ -15,13 +15,14 @@ const Button = ({ children, color='green', className, badgeValue }) => {
   const base = 'font-bold py-2 px-4 rounded text-white'
   const colors = {
     green: 'bg-green-500 md:hover:bg-green-700',
-    red: 'bg-red-500 md:hover:bg-red-700'
+    red: 'bg-red-500 md:hover:bg-red-700',
+    blue: 'bg-sky-500 md:hover:bg-sky-700',
+    gray: 'bg-gray-500 md:hover:bg-gray-700'
   }
-
   const myCustomClass = `${base} ${colors[color]} ${className}`
 
   return (
-      <button style={buttonStyle} className={myCustomClass}>
+      <button {...opts} style={buttonStyle} className={myCustomClass}>
         {children}
         { !!badgeValue && <Badge className="rounded-full"style={badgeStyle} value={badgeValue}/> }
       </button>
