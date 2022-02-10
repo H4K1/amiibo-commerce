@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const Navbar = () => {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-white px-6 py-4">
@@ -9,12 +11,10 @@ const Navbar = () => {
 
       <div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
         <div className="items-center">
-          <button
-            href="#"
-            className="text-xl inline-block text-sm p-3 leading-none border rounded font-bold text-red-500 border-red-500  hover:text-white hover:bg-red-500 mt-4 mt-0 rounded-full"
-          >
+
+          <Button color="red" badgeValue={4}>
             <i class="fa-solid fa-bag-shopping"></i>
-          </button>
+          </Button>
         </div>
       </div>
     </nav>
