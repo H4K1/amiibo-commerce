@@ -31,12 +31,12 @@ const ShoppingCartProduct = ({ amiibo }) => {
         </div>
         <div className="flex-1 flex items-center justify-end text-sm">
           <i
-            onClick={() => removeItemFromCart(dispatch, amiibo)}
+            onClick={() => dispatch(removeItemFromCart(amiibo))}
             className="text-xl cursor-pointer fa-solid fa-circle-minus"
           ></i>
           <span className="mx-4 text-gray-500">{dispatch, quantity}</span>
           <i
-            onClick={() => addItemToCart(dispatch, amiibo)}
+            onClick={() => dispatch(addItemToCart(amiibo))}
             className="text-xl cursor-pointer fa-solid fa-circle-plus"
           ></i>
         </div>

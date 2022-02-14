@@ -25,7 +25,7 @@ const Navbar = () => {
 
       <div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
         <div className="items-center">
-          <Button onClick={ () => showModalCart(dispatch) } className="relative" color="red" badgeValue={shoppingCartCount}>
+          <Button onClick={ () => dispatch(showModalCart()) } className="relative" color="red" badgeValue={shoppingCartCount}>
             <i className="fa-solid fa-bag-shopping"></i>
           </Button>
         </div>

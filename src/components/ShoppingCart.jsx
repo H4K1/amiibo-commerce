@@ -8,7 +8,6 @@ import Button from "./Button";
 import ShoppingCartProduct from "./ShoppingCartProduct";
 
 const ShoppingCart = ({ visible }) => {
-  // TODO: Don't use useDispatch here, search alternative on the future
   const dispatch = useDispatch()
   let filteredShoppingCart = useSelector(state => state.shoppingCart.filter(item => item.quantity > 0) )
   let allPrices= filteredShoppingCart.map(item => item.price * item.quantity)
@@ -40,7 +39,7 @@ const ShoppingCart = ({ visible }) => {
                   </h2>
                   <div className="ml-3 h-7 flex items-center">
                     <Button
-                      onClick={() => hideModalCart(dispatch)}
+                      onClick={() => dispatch(hideModalCart())}
                       color="none"
                       className="text-gray-400 hover:text-gray-500"
                     >

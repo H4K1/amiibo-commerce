@@ -5,7 +5,6 @@ import { currencyFormat } from '../helpers'
 import { useDispatch } from "react-redux";
 
 const ProductCard = ({ amiibo }) => {
-  // TODO: Don't use useDispatch here, search alternative on the future
   const dispatch = useDispatch();
   const { name, price, image, amiiboSeries } = amiibo;
 
@@ -21,7 +20,7 @@ const ProductCard = ({ amiibo }) => {
 
       <section className="">
         <Button
-          onClick={() => addItemToCart(dispatch, amiibo)}
+          onClick={() => dispatch(addItemToCart(amiibo))}
           className="w-full"
           color="green"
         >

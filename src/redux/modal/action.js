@@ -1,9 +1,9 @@
-const showModalCart = (dispatch) => {
-  dispatch({ type: 'modal/show_cart', payload: true })  
+const showModalCart = () => {
+  return ({ type: 'modal/show_cart', payload: true })  
 }
 
-const hideModalCart = (dispatch) => {
-  dispatch({ type: 'modal/show_cart', payload: false })  
+const hideModalCart = () => {
+  return ({ type: 'modal/show_cart', payload: false })  
 }
 
 export { showModalCart, hideModalCart };
