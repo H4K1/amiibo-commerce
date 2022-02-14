@@ -1,26 +1,33 @@
 import Button from "./Button";
 import Card from "./Card";
+import { addItemToCart } from "../redux/shoppingCart/action";
+import { currencyFormat } from '../helpers'
+import { useDispatch } from "react-redux";
 
-const ProductCard = () => {
+const ProductCard = ({ amiibo }) => {
+  // TODO: Don't use useDispatch here, search alternative on the future
+  const dispatch = useDispatch();
+  const { name, price, image, amiiboSeries } = amiibo;
+
   return (
-    <Card>
-      <img
-        className="mb-4 object-contain h-48 w-96 "
-        src="https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00000000-00000002.png"
-        alt="Mario"
-      />
-      <div className="md:flex md:justify-between">
-        <section className="pl-6 pb-4">
-          <div className="font-bold text-sm md:text-xl mb-2">Mario bros</div>
-          <p className="font-semibold text-green-500 text-base">$20.000</p>
-        </section>
+    <Card className="">
+      <img className="mb-4 object-contain h-48 w-96 " src={image} />
 
-        <section>
-          <Button className="w-full md:w-none md:h-full" color="green">
-            Add
-          </Button>
-        </section>
-      </div>
+      <section className="p-3 pb-4">
+        <div className="font-bold text-sm mb-0 md:text-xl mb-2">{name}</div>
+        <span className="font-thin text-sm">{ amiiboSeries }</span>
+        <p className="font-semibold text-green-500 text-base">{currencyFormat(price)}</p>
+      </section>
+
+      <section className="">
+        <Button
+          onClick={() => addItemToCart(dispatch, amiibo)}
+          className="w-full"
+          color="green"
+        >
+          Add
+        </Button>
+      </section>
     </Card>
   );
 };
