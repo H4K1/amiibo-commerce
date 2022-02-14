@@ -6,7 +6,7 @@ import { sum } from 'lodash';
 
 const Navbar = () => {
   const dispatch = useDispatch()
-  let show = useSelector(x => x.showShoppingCartModal)
+  let { showShoppingCartModal } = useSelector(x => x)
   let cartItemsQuantity= useSelector(x => x.shoppingCart)?.map(item => item.quantity)
   let shoppingCartCount = sum(cartItemsQuantity)
 
@@ -30,7 +30,7 @@ const Navbar = () => {
           </Button>
         </div>
       </div>
-      <ShoppingCart visible={show}/>
+      <ShoppingCart visible={showShoppingCartModal}/>
     </nav>
   );
 };
