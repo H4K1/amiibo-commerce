@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { showModalCart } from "../redux/modal/action";
 import Button from "./Button";
 import ShoppingCart from "./ShoppingCart";
