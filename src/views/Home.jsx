@@ -16,8 +16,8 @@ const Home = () => {
       <Container className="flex justify-center">
         <div className="grid grid-cols-12 gap-2 my-2">
           {amiibos.map((amiibo, index) => (
-            <div className="col-span-12 md:col-span-3">
-              <ProductCard key={index} amiibo={amiibo} />
+            <div key={amiibo.id} className="col-span-12 md:col-span-3">
+              <ProductCard key={amiibo.id} amiibo={amiibo} />
             </div>
           ))}
         </div>
