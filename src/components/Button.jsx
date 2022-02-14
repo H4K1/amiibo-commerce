@@ -8,12 +8,9 @@ const Button = ({ children, color='green', className, badgeValue, ...opts}) => {
     fontSize: '.8rem'
   }
 
-  const buttonStyle = {
-    position: 'relative'
-  }
-
   const base = 'font-bold py-2 px-4 rounded text-white'
   const colors = {
+    none: '',
     green: 'bg-green-500 md:hover:bg-green-700',
     red: 'bg-red-500 md:hover:bg-red-700',
     blue: 'bg-sky-500 md:hover:bg-sky-700',
@@ -22,7 +19,7 @@ const Button = ({ children, color='green', className, badgeValue, ...opts}) => {
   const myCustomClass = `${base} ${colors[color]} ${className}`
 
   return (
-      <button {...opts} style={buttonStyle} className={myCustomClass}>
+      <button {...opts} className={myCustomClass}>
         {children}
         { !!badgeValue && <Badge className="rounded-full"style={badgeStyle} value={badgeValue}/> }
       </button>
