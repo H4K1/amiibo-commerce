@@ -1,38 +1,29 @@
+import localStorage from "../../services/localStorage";
+
 const cartAddItem = (state, action) => {
   let newCart = [];
-  const haveProductInCart = (payload) => {
-    let myCart = state.filter((item) => item.id == payload.id);
-    return !!myCart.length;
-  };
 
-  if (haveProductInCart(action.payload)) {
+  const existsProductInCart = state.filter(item => item.id == action.payload.id).length
+
+  if (!!existsProductInCart) {
     newCart = state.map((item) => {
-      if (item.id == action.payload.id) {
-        return { ...item, quantity: item.quantity + 1 };
-      }
-      return item;
+      return item.id == action.payload.id ? { ...item, quantity: (item.quantity + 1) } : item
     });
   } else {
     newCart = state.concat(action.payload);
   }
 
+  localStorage.saveData('shopping_cart', newCart)
   return [...newCart];
 };
 
 const cartRemoveItem = (state, action) => {
-  let myCart = state.map((item) => {
-    if (item.id == action.payload.id && item.quantity >= 1) {
-      return { ...item, quantity: item.quantity - 1 };
-    }
-
-    if (item.id == action.payload.id && item.quantity < 1) {
-      return { ...item, quantity: 0 };
-    }
-
-    return item;
+  let newCart = state.map((item) => {
+    return item.id == action.payload.id ? { ...item, quantity: (item.quantity - 1 ) } : item
   });
 
-  return [...myCart];
+  localStorage.saveData('shopping_cart', newCart)
+  return [...newCart];
 };
 
 export { cartAddItem, cartRemoveItem };
