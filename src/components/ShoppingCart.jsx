@@ -1,11 +1,10 @@
-import { hideModalCart } from "../redux/modal/action";
-import { currencyFormat } from '../helpers'
-
 import { useSelector, useDispatch  } from 'react-redux'
 import { sum } from 'lodash'
-
-import Button from "./Button";
-import ShoppingCartProduct from "./ShoppingCartProduct";
+import { hideModalCart } from '../redux/modal/action';
+import { currencyFormat } from '../helpers'
+import { boolean } from '../propTypes';
+import Button from './Button';
+import ShoppingCartProduct from './ShoppingCartProduct';
 
 const ShoppingCart = ({ visible }) => {
   const dispatch = useDispatch()
@@ -82,5 +81,9 @@ const ShoppingCart = ({ visible }) => {
     </div>
   );
 };
+
+ShoppingCart.propTypes = {
+  visible: boolean
+}
 
 export default ShoppingCart;

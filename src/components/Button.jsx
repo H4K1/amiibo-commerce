@@ -1,3 +1,4 @@
+import { string, node, number } from 'prop-types';
 import Badge from './Badge'
 const Button = ({ children, color='green', className, badgeValue, ...opts}) => {
 
@@ -25,5 +26,12 @@ const Button = ({ children, color='green', className, badgeValue, ...opts}) => {
       </button>
   );
 };
+
+Button.propTypes = {
+  color: string,
+  className: string,
+  badgeValue: number,
+  children: node,
+}
 
 export default Button;

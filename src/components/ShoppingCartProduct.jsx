@@ -1,9 +1,10 @@
-import { currencyFormat } from "../helpers";
-import { useDispatch } from "react-redux";
+import { currencyFormat } from '../helpers';
+import { useDispatch } from 'react-redux';
 import {
   addItemToCart,
   removeItemFromCart,
-} from "../redux/shoppingCart/action";
+} from '../redux/shoppingCart/action';
+import {object} from '../propTypes';
 
 const ShoppingCartProduct = ({ amiibo }) => {
   const { quantity, name, price, image, amiiboSeries } = amiibo;
@@ -44,5 +45,9 @@ const ShoppingCartProduct = ({ amiibo }) => {
     </li>
   );
 };
+
+ShoppingCartProduct.propTypes = {
+  amiibo: object
+}
 
 export default ShoppingCartProduct;

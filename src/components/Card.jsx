@@ -1,3 +1,5 @@
+import { node } from 'prop-types'
+
 const Card = ({ children, ...opts }) => {
   const { className='' } = opts 
   const style = {
@@ -9,6 +11,10 @@ const Card = ({ children, ...opts }) => {
       { children }
     </div>
   )
+}
+
+Card.propTypes = {
+  children: node
 }
 
 export default Card;

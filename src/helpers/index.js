@@ -1,6 +1,6 @@
 const generateRandomPrice = (min, max) => {
   const num = (Math.floor(Math.random() * (max - min)) + min).toString();
-  return Number(num + "990");
+  return Number(num + '990');
 };
 
 const currencyFormat = (integer) => {

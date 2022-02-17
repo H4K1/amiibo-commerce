@@ -1,6 +1,6 @@
-import { showModalCart } from "../redux/modal/action";
-import Button from "./Button";
-import ShoppingCart from "./ShoppingCart";
+import { showModalCart } from '../redux/modal/action';
+import Button from './Button';
+import ShoppingCart from './ShoppingCart';
 import { useSelector, useDispatch } from 'react-redux'
 import { sum } from 'lodash';
 

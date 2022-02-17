@@ -1,8 +1,9 @@
-import Button from "./Button";
-import Card from "./Card";
-import { addItemToCart } from "../redux/shoppingCart/action";
+import Button from './Button';
+import Card from './Card';
+import { addItemToCart } from '../redux/shoppingCart/action';
 import { currencyFormat } from '../helpers'
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { object } from '../propTypes';
 
 const ProductCard = ({ amiibo }) => {
   const dispatch = useDispatch();
@@ -30,5 +31,9 @@ const ProductCard = ({ amiibo }) => {
     </Card>
   );
 };
+
+ProductCard.propTypes = {
+  amiibo: object,
+}
 
 export default ProductCard;

@@ -1,3 +1,5 @@
+import { string, node } from '../propTypes';
+
 const Container = ({ children, className }) => {
   
   const myCustomClass = `container max-w-5xl w-full p-6 mx-auto ${className}`
@@ -7,6 +9,11 @@ const Container = ({ children, className }) => {
       { children }
     </div>
   )
+}
+
+Container.propTypes = {
+  children: node,
+  className: string
 }
 
 export default Container;
