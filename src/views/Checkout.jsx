@@ -2,7 +2,8 @@ import ShoppingCartProduct from '../components/ShoppingCartProduct'
 import Container from '../components/Container' 
 import Card from '../components/Card'
 import Button from '../components/Button'
-import Modal from '../components/Modal'
+import ModalFinalizeOrder from '../components/ModalFinalizeOrder'
+
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { currencyFormat } from '../helpers'
@@ -17,7 +18,7 @@ const total = sum(subTotal)
 
   return(
     <Container>
-      <Modal visible={show} ></Modal>
+      <ModalFinalizeOrder visible={show} />
       <div className="flex grid grid-cols-12 gap-2 my-2">
         <div  className="flex flex-col items-center w-full col-span-12 mx-auto md:col-span-6">
           {
