@@ -1,14 +1,27 @@
 import ProductCard from '../components/ProductCard';
 import Container from '../components/Container';
 import { useState, useEffect } from 'react';
+import localStorage from '../services/localStorage';
 import Amiibo from '../services/amiibo';
 
 const Home = () => {
   const [amiibos, setAmiibos] = useState([]);
   const service = new Amiibo();
 
-  useEffect(async () => {
-    setAmiibos(await service.all());
+  const getAmiibos = async () => {
+  const localAmiibos = localStorage.getData('amiibos')
+
+   if(localAmiibos.length) {
+      setAmiibos(localAmiibos)
+   } else {
+      const data = await service.all()
+      localStorage.saveData('amiibos', data)
+      setAmiibos(data)
+   }
+  }
+
+  useEffect(async() => {
+    await getAmiibos()
   }, []);
 
   return (
