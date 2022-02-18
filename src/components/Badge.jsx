@@ -1,4 +1,4 @@
-import { string, number, object } from '../propTypes'
+import { string, number, object } from 'prop-types'
 
 const Badge = ({ value, color='yellow', className='', style }) => {
 

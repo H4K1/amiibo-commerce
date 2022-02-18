@@ -3,7 +3,7 @@ import Card from './Card';
 import { addItemToCart } from '../redux/shoppingCart/action';
 import { currencyFormat } from '../helpers'
 import { useDispatch } from 'react-redux';
-import { object } from '../propTypes';
+import { object } from 'prop-types';
 
 const ProductCard = ({ amiibo }) => {
   const dispatch = useDispatch();

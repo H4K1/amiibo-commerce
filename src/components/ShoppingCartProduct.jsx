@@ -4,7 +4,7 @@ import {
   addItemToCart,
   removeItemFromCart,
 } from '../redux/shoppingCart/action';
-import {object} from '../propTypes';
+import { object } from 'prop-types';
 
 const ShoppingCartProduct = ({ amiibo }) => {
   const { quantity, name, price, image, amiiboSeries } = amiibo;

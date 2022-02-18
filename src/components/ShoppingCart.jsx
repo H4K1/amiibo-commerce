@@ -1,15 +1,16 @@
 import { useSelector, useDispatch  } from 'react-redux'
+import { Link } from 'react-router-dom';
 import { sum } from 'lodash'
 import { hideModalCart } from '../redux/modal/action';
 import { currencyFormat } from '../helpers'
-import { boolean } from '../propTypes';
+import { bool } from 'prop-types';
 import Button from './Button';
 import ShoppingCartProduct from './ShoppingCartProduct';
 
 const ShoppingCart = ({ visible }) => {
   const dispatch = useDispatch()
   let filteredShoppingCart = useSelector(state => state.shoppingCart.filter(item => item.quantity > 0) )
-  let allPrices= filteredShoppingCart.map(item => item.price * item.quantity)
+  let allPrices = filteredShoppingCart.map(item => item.price * item.quantity)
   let subtotal = sum(allPrices)
 
   return (
@@ -66,12 +67,14 @@ const ShoppingCart = ({ visible }) => {
                   <p>{ currencyFormat(subtotal) }</p>
                 </div>
                 <div className="mt-6">
-                  <Button
-                    color="blue"
-                    className="w-full flex justify-center items-center font-xl"
-                  >
-                    Checkout
-                  </Button>
+                  <Link onClick={ () => dispatch(hideModalCart) } to='/checkout'>
+                    <Button
+                      color="blue"
+                      className="w-full flex justify-center items-center font-xl"
+                    >
+                      Checkout
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -83,7 +86,7 @@ const ShoppingCart = ({ visible }) => {
 };
 
 ShoppingCart.propTypes = {
-  visible: boolean
+  visible: bool
 }
 
 export default ShoppingCart;

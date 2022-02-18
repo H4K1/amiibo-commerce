@@ -1,4 +1,4 @@
-import { string, node } from '../propTypes';
+import { string, node } from 'prop-types';
 
 const Container = ({ children, className }) => {
   

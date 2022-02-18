@@ -1,9 +1,8 @@
-import { node } from 'prop-types'
+import { node, string } from 'prop-types'
 
-const Card = ({ children, ...opts }) => {
-  const { className='' } = opts 
+const Card = ({ maxWidth='16rem', children, className='' }) => {
   const style = {
-    maxWidth: '16rem',
+    maxWidth,
   }
 
   return (
@@ -14,7 +13,9 @@ const Card = ({ children, ...opts }) => {
 }
 
 Card.propTypes = {
-  children: node
+  children: node,
+  maxWidth: string,
+  className: string,
 }
 
 export default Card;

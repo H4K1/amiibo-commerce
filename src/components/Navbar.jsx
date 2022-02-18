@@ -3,6 +3,7 @@ import Button from './Button';
 import ShoppingCart from './ShoppingCart';
 import { useSelector, useDispatch } from 'react-redux'
 import { sum } from 'lodash';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const dispatch = useDispatch()
@@ -12,16 +13,18 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between flex-wrap bg-white px-6 py-4">
-      <div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
-        <img
-          className="max-w-sm mr-3"
-          src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Mario_emblem_inverted.svg"
-          alt=""
-        />
-        <span className="font-semibold text-2xl tracking-tight">
-          Mario Store
-        </span>
-      </div>
+      <Link to="/">
+        <div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
+          <img
+            className="max-w-sm mr-3"
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Mario_emblem_inverted.svg"
+            alt=""
+          />
+          <span className="font-semibold text-2xl tracking-tight">
+            Mario Store
+          </span>
+        </div>
+      </Link>
 
       <div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
         <div className="items-center">
