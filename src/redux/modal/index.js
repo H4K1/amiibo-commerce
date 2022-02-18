@@ -1,4 +1,4 @@
-import { showModalCart } from "./utils";
+import { showModalCart } from './utils';
 
 const modalReducer = (state=false, action) => {
   switch (action.type) {
