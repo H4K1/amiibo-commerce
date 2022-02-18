@@ -11,7 +11,7 @@ const ProductCard = ({ amiibo }) => {
 
   return (
     <Card className="">
-      <img className="mb-4 object-contain h-48 w-96 " src={image} />
+      <img className="pt-5 mb-4 object-contain h-48 w-96 " src={image} />
 
       <section className="p-3 pb-4">
         <div className="font-bold text-sm mb-0 md:text-xl mb-2">{name}</div>
