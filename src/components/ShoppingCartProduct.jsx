@@ -16,7 +16,7 @@ const ShoppingCartProduct = ({ amiibo }) => {
         <img
           src={image}
           alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-          className="w-full h-full object-center object-cover"
+          className="w-full h-full object-center object-contain "
         />
       </div>
 
