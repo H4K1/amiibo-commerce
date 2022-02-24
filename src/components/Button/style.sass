@@ -1,0 +1,20 @@
+.button
+  @apply font-bold py-2 px-4 rounded text-white
+  &-green
+    @extend .button
+    @apply bg-green-500 md:hover:bg-green-700
+  &-red
+    @extend .button
+    @apply bg-red-500 md:hover:bg-red-700
+  &-blue
+    @extend .button
+    @apply bg-sky-500 md:hover:bg-sky-700
+  &-gray
+    @extend .button
+    @apply bg-gray-500 md:hover:bg-gray-700
+
+.badge-position
+  position: absolute 
+  top: -10px
+  right: -10px
+  font-size: .8rem
