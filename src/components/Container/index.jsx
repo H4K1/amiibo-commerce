@@ -1,12 +1,13 @@
+import './style.sass'
 import { string, node } from 'prop-types';
 
 const Container = ({ children, className }) => {
-  
-  const myCustomClass = `container max-w-5xl w-full p-6 mx-auto ${className}`
+
+  const myCustomClass = `custom-container ${className}`
 
   return (
     <div className={myCustomClass}>
-      { children }
+      {children}
     </div>
   )
 }
