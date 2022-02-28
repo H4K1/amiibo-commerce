@@ -1,9 +1,9 @@
 const showModalCart = () => {
-  return ({ type: 'modal/show_cart', payload: true })  
+  return ({ type: 'modal/show_cart', payload: true })
 }
 
 const hideModalCart = () => {
-  return ({ type: 'modal/show_cart', payload: false })  
+  return ({ type: 'modal/show_cart', payload: false })
 }
 
 export { showModalCart, hideModalCart };

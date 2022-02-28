@@ -2,16 +2,15 @@ import axios from 'axios';
 import { generateRandomPrice, generateId } from '../helpers'
 
 class Amiibo {
-  constructor(baseUrl='https://amiiboapi.com/api') {
+  constructor(baseUrl = 'https://amiiboapi.com/api') {
     this.baseUrl = baseUrl
     this.service = axios.create({ baseURL: this.baseUrl })
     this.amiibos = []
-    this.all()
   }
 
-  async all(opts={}) {
+  async all(opts = {}) {
     try {
-      const params = new URLSearchParams({ gameseries: 'Super Mario', ...opts})
+      const params = new URLSearchParams({ gameseries: 'Super Mario', ...opts })
       const response = await this.service.get('/amiibo', { params });
       const { data } = response;
       const { amiibo } = data

@@ -1,4 +1,4 @@
-import { useSelector, useDispatch  } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { sum } from 'lodash'
 import { hideModalCart } from '../redux/modal/action';
@@ -9,9 +9,13 @@ import ShoppingCartProduct from './ShoppingCartProduct';
 
 const ShoppingCart = ({ visible }) => {
   const dispatch = useDispatch()
-  let filteredShoppingCart = useSelector(state => state.shoppingCart.filter(item => item.quantity > 0) )
+  let filteredShoppingCart = useSelector(state => state.shoppingCart.filter(item => item.quantity > 0))
   let allPrices = filteredShoppingCart.map(item => item.price * item.quantity)
   let subtotal = sum(allPrices)
+
+  const hideModal = () => {
+    dispatch(hideModalCart())
+  }
 
   return (
     <div
@@ -64,10 +68,10 @@ const ShoppingCart = ({ visible }) => {
               <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                 <div className="flex justify-between text-base font-medium text-gray-900">
                   <p>Subtotal</p>
-                  <p>{ currencyFormat(subtotal) }</p>
+                  <p>{currencyFormat(subtotal)}</p>
                 </div>
                 <div className="mt-6">
-                  <Link onClick={ () => dispatch(hideModalCart) } to='/checkout'>
+                  <Link onClick={hideModal} to='/checkout'>
                     <Button
                       color="blue"
                       className="w-full flex justify-center items-center font-xl"

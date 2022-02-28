@@ -1,8 +1,8 @@
 import './style.sass';
-import Button from './Button';
-import Card from './Card';
-import { addItemToCart } from '../redux/shoppingCart/action';
-import { currencyFormat } from '../helpers';
+import Button from '../Button';
+import Card from '../Card';
+import { addItemToCart } from '../../redux/shoppingCart/action';
+import { currencyFormat } from '../../helpers';
 import { useDispatch } from 'react-redux';
 import { object } from 'prop-types';
 

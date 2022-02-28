@@ -1,9 +1,11 @@
 const addItemToCart = (payload) => {
-  return ({ type: 'cart/addItem', payload })
+  return { type: 'cart/addItem', payload }
 }
 
-const removeItemFromCart= (payload) => {
-  return ({ type: 'cart/removeItem', payload })
+const removeItemFromCart = (payload) => {
+  return { type: 'cart/removeItem', payload }
 }
 
-export { addItemToCart, removeItemFromCart };
+const resetCart = { type: 'cart/reset' }
+
+export { addItemToCart, removeItemFromCart, resetCart };
