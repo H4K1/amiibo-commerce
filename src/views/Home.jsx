@@ -9,18 +9,18 @@ const Home = () => {
   const service = new Amiibo();
 
   const getAmiibos = async () => {
-  const localAmiibos = localStorage.getData('amiibos')
+    const localAmiibos = localStorage.getData('amiibos')
 
-   if(localAmiibos.length) {
+    if (localAmiibos.length) {
       setAmiibos(localAmiibos)
-   } else {
+    } else {
       const data = await service.all()
       localStorage.saveData('amiibos', data)
       setAmiibos(data)
-   }
+    }
   }
 
-  useEffect(async() => {
+  useEffect(async () => {
     await getAmiibos()
   }, []);
 
